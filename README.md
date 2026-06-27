@@ -7,6 +7,7 @@
 开源、轻量化、**AI 驱动**的 IoT PaaS — 深耕 **B 端垂直行业**与**白牌出海**，以数万级私有化成本为硬件厂商与产业集群提供行业解调、专属 BI 与贴牌 App。
 
 > **品牌**：[syncrobrain.com](https://syncrobrain.com) · **组织**：[github.com/syncrobrain](https://github.com/syncrobrain)（原 LuminaryIoTChain）  
+> **组织主页**：[github.com/syncrobrain](https://github.com/syncrobrain) · 资料源文件见 [`assets/github/`](./assets/github/)
 > **核心链路**：设备（端）→ MQTT（管道）→ 物联网平台（大脑）→ 终端 App（展示）
 
 ## 解决什么问题
@@ -91,5 +92,5 @@ Logto 统一登录需另启 [LuminaryWorks/identity](https://github.com/Luminary
 | [spec/platform-vision.md](./spec/platform-vision.md) | 平台愿景与初期红线 |
 | [spec/architecture.md](./spec/architecture.md) | 四层架构 |
 | [spec/ecosystem.md](./spec/ecosystem.md) | 工程规格 — LuminaryWorks 角色 |
-| [docs/ecosystem.md](./docs/ecosystem.md) | **对外** — 生态说明 |
+| [syncrobrain/docs](https://github.com/syncrobrain/docs) | **对外** — RsPress 文档站（公开仓） |
 | [plan/README.md](./plan/README.md) | 里程碑 |

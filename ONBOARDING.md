@@ -11,7 +11,7 @@
 | 后端 | `iot-gateway/` | NestJS |
 | 前端 | `iot-console-web/` | Web 控制台 |
 | 官网 | `website/` | Next.js → Cloudflare Pages |
-| 文档 | `docs/` | 对外文档（公开仓） |
+| 文档 | `docs/` | 对外文档（RsPress，公开仓，`pnpm dev` → :13014） |
 | 部署 | `deploy/` | Docker Compose |
 
 子仓清单：`.meta/manifest.json`

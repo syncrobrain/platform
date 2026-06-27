@@ -7,7 +7,7 @@
 | [platform-vision.md](./platform-vision.md) | 平台愿景、大平台缝隙、与涂鸦差异、初期红线（三条死穴） |
 | [architecture.md](./architecture.md) | 四层架构 Edge / Pipe / Brain / Client |
 | [ecosystem.md](./ecosystem.md) | LuminaryWorks 五产品生态角色 |
-| [../docs/ecosystem.md](../docs/ecosystem.md) | 对外生态说明 |
+| [syncrobrain/docs](https://github.com/syncrobrain/docs) | 对外文档站（RsPress，公开仓） |
 | [device-domain.md](./device-domain.md) | 设备域模型与 API |
 | [LuminaryWorks/spec/products/syncrobrain.md](https://github.com/LuminaryWorks/LuminaryWorks/blob/main/spec/products/syncrobrain.md) | 生态层产品规划 |
 

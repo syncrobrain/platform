@@ -34,6 +34,6 @@
 
 | 文档 | 说明 |
 |------|------|
-| [docs/ecosystem.md](../docs/ecosystem.md) | 对外生态说明 |
+| [syncrobrain/docs](https://github.com/syncrobrain/docs) | 对外文档站（RsPress，公开仓） |
 | [spec/ecosystem.md](../spec/ecosystem.md) | 工程集成规格 |
 | [LuminaryWorks 叙事](https://github.com/LuminaryWorks/LuminaryWorks/blob/main/docs/ecosystem-narrative.md) | 五产品 AI 生态故事 |

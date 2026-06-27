@@ -149,7 +149,8 @@ function printNextSteps(root, skipDocker) {
 或分别开终端:
   cd iot-gateway && pnpm dev     → http://localhost:13100
   cd iot-console-web && pnpm dev → http://localhost:5180
-  cd website && pnpm dev                  → http://localhost:3000
+  cd website && pnpm dev                  → http://localhost:13013
+  cd docs && pnpm dev                     → http://localhost:13014
 
 统一登录（Logto）需先启动 LuminaryWorks/identity:
   cd ../LuminaryWorks/identity && ./bootstrap.ps1
