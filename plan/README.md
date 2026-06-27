@@ -2,7 +2,7 @@
 
 ## 仓库拆解
 
-多仓架构对齐 BlockyEdu / VistaRemote：**公开 docs**、**私有**前后端 — 见 [repository-split.md](./repository-split.md)。
+多仓架构对齐 VibeCode / VistaRemote：**公开 docs**、**私有**各业务子仓 — 见 [repository-split.md](./repository-split.md)。子仓清单：[`.meta/manifest.json`](../.meta/manifest.json)，初始化：`./init.sh`，IDE：`syncrobrain.code-workspace`。
 
 ## 里程碑
 

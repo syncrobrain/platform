@@ -1,0 +1,49 @@
+{
+  "$schema": "./manifest.schema.json",
+  "version": 1,
+  "installOrder": [
+    "iot-gateway",
+    "iot-console-web",
+    "website",
+    "docs",
+    "deploy"
+  ],
+  "devUpInstallOrder": ["iot-gateway", "iot-console-web", "website"],
+  "projects": {
+    "iot-gateway": {
+      "path": "iot-gateway",
+      "remote": "git@github.com:syncrobrain/iot-gateway.git",
+      "remoteHttps": "https://github.com/syncrobrain/iot-gateway.git",
+      "required": true,
+      "description": "NestJS 编排层（JWT、设备影子、MQTT）"
+    },
+    "iot-console-web": {
+      "path": "iot-console-web",
+      "remote": "git@github.com:syncrobrain/iot-console-web.git",
+      "remoteHttps": "https://github.com/syncrobrain/iot-console-web.git",
+      "required": true,
+      "description": "Web 控制台（React + Rsbuild + Logto PKCE）"
+    },
+    "website": {
+      "path": "website",
+      "remote": "git@github.com:syncrobrain/website.git",
+      "remoteHttps": "https://github.com/syncrobrain/website.git",
+      "required": false,
+      "description": "营销官网（Next.js 静态导出 → Cloudflare Pages）"
+    },
+    "docs": {
+      "path": "docs",
+      "remote": "git@github.com:syncrobrain/docs.git",
+      "remoteHttps": "https://github.com/syncrobrain/docs.git",
+      "required": false,
+      "description": "对外文档（RsPress，公开仓）"
+    },
+    "deploy": {
+      "path": "deploy",
+      "remote": "git@github.com:syncrobrain/deploy.git",
+      "remoteHttps": "https://github.com/syncrobrain/deploy.git",
+      "required": false,
+      "description": "Docker Compose 开发栈（PostgreSQL、Redis、MQTT）"
+    }
+  }
+}

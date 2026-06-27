@@ -1,27 +1,17 @@
-# LuminaryIoTChain MetaRepo — clone service repos into services/
-$ErrorActionPreference = "Stop"
-$Root = Split-Path -Parent $MyInvocation.MyCommand.Path
-$Org = if ($env:LUMINARY_IOT_ORG) { $env:LUMINARY_IOT_ORG } else { "LuminaryIoTChain" }
+# Clone all child repositories listed in .meta/manifest.json
+# Usage: .\init.ps1
+#        .\init.ps1 -Only iot-gateway,website
 
-function Clone-IfMissing {
-    param([string]$Name, [string]$Dest)
-    $Url = "git@github.com:${Org}/${Name}.git"
-    if (Test-Path (Join-Path $Dest ".git")) {
-        Write-Host "==> $Name already present at $Dest"
-        return
-    }
-    if ((Test-Path $Dest) -and (Get-ChildItem $Dest -ErrorAction SilentlyContinue)) {
-        Write-Host "==> $Dest exists but is not a git repo; skip clone (monorepo layout)"
-        return
-    }
-    Write-Host "==> Cloning $Url -> $Dest"
-    git clone $Url $Dest
-}
+param(
+  [string]$Only,
+  [switch]$Https,
+  [switch]$RequiredOnly
+)
 
-$Services = Join-Path $Root "services"
-New-Item -ItemType Directory -Force -Path $Services | Out-Null
+$args = @("tooling/scripts/init-repos.mjs")
+if ($Only) { $args += "--only=$Only" }
+if ($Https) { $args += "--https" }
+if ($RequiredOnly) { $args += "--required-only" }
 
-Clone-IfMissing "iot-gateway" (Join-Path $Services "iot-gateway")
-Clone-IfMissing "iot-console-web" (Join-Path $Services "iot-console-web")
-
-Write-Host "==> Done. See ONBOARDING.md for dev startup."
+node @args
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

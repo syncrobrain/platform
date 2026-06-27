@@ -7,8 +7,9 @@
 | 类型 | 可见性 | 原因 |
 |------|--------|------|
 | **docs**（RsPress 文档站） | **Public** | 降低硬件厂商接入门槛；SEO 与社区 |
-| MetaRepo（spec/plan/contracts） | **Private** | 工程治理、未发布路线图 |
+| MetaRepo（platform：spec/plan/contracts） | **Private** | 工程治理、未发布路线图 |
 | iot-gateway / iot-console-web | **Private** | 商业交付前核心代码 |
+| website | **Private** | 品牌站点与部署密钥（Cloudflare） |
 | deploy | **Private** | 含默认密钥模板与内网拓扑 |
 | app-mobile（规划） | **Private** | 与涂鸦类竞品差异化 |
 

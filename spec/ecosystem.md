@@ -41,5 +41,9 @@ Edge ──MQTT──► SyncroBrain ──► 可选：DataLuminary / DoerFlow 
 
 - 登录走 LuminaryWorks 共享 Logto + `@luminary/auth-core`  
 - 图表**首选 DataTalk**，ThingsBoard Widget 非主路径
+- **垂直深耕**：切入大厂不愿做的长尾行业（行业 Decoder + 专属 BI），不争夺消费级通用 IoT
+- **数据主权**：支持私有化与贴牌 App，满足 GDPR、NIS2、信创与《数据安全法》诉求
+- **不造轮子**：MQTT / 时序 / 规则引擎用 EMQX、ThingsBoard、ClickHouse 等开源栈；自研集中在 iot-gateway 编排与 DataTalk BI
+- **初期红线**：B 端低频次采集、明确产业集群客户画像 — 详见 [platform-vision.md §7](./platform-vision.md#7-初期红线规避小平台倒闭的死穴)
 
 > 历史品牌 **LuminaryIoTChain** 指同一产品，已升级为 **SyncroBrain**。

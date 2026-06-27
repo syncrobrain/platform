@@ -4,7 +4,7 @@
 
 | 文档 | 说明 |
 |------|------|
-| [platform-vision.md](./platform-vision.md) | 平台愿景、痛点、与涂鸦差异、AI/链上差异化 |
+| [platform-vision.md](./platform-vision.md) | 平台愿景、大平台缝隙、与涂鸦差异、初期红线（三条死穴） |
 | [architecture.md](./architecture.md) | 四层架构 Edge / Pipe / Brain / Client |
 | [ecosystem.md](./ecosystem.md) | LuminaryWorks 五产品生态角色 |
 | [../docs/ecosystem.md](../docs/ecosystem.md) | 对外生态说明 |

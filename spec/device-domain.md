@@ -35,4 +35,4 @@ MQTT 接入（M2 dev：Mosquitto；**M3 生产目标：EMQX → ThingsBoard CE**
 | `iot/v1/{deviceId}/presence` | `{"status":"online"\|"offline"}` | 上下线（M2 ✅） |
 | `iot/v1/{deviceId}/telemetry` | JSON | 遥测（M2 仅日志，M5 写入 ClickHouse） |
 
-本地模拟：`npm run mqtt:presence -- <device-uuid> online`（在 `services/iot-gateway`）
+本地模拟：`npm run mqtt:presence -- <device-uuid> online`（在 `iot-gateway`）

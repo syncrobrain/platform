@@ -1,7 +1,0 @@
-allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
-  workerd: set this to true or false
-minimumReleaseAgeExclude:
-  - '@ant-design/icons-svg@4.5.0'
-  - '@ant-design/icons@6.3.1'

@@ -1,0 +1,19 @@
+{
+  "organization": "syncrobrain",
+  "legacyOrganization": "LuminaryIoTChain",
+  "defaultBranch": "master",
+  "cloneProtocol": "ssh",
+  "httpsHost": "github.com",
+  "sshHost": "github.com",
+  "metaRepo": {
+    "name": "platform",
+    "description": "SyncroBrain Meta-Repo — spec、plan、contracts、子仓编排",
+    "remote": "git@github.com:syncrobrain/LuminaryIoTChain.git",
+    "remoteHttps": "https://github.com/syncrobrain/LuminaryIoTChain.git"
+  },
+  "notes": [
+    "Do not use git submodule or git subtree for child repos.",
+    "Commit application code in each child repo; commit spec/tooling changes in Meta-Repo.",
+    "Open syncrobrain.code-workspace in Cursor / VS Code for multi-root editing."
+  ]
+}

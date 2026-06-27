@@ -1,3 +1,0 @@
-{
-  "extends": ["../../tooling/biome.base.json"]
-}

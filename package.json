@@ -1,0 +1,19 @@
+{
+  "name": "syncrobrain-meta",
+  "private": true,
+  "description": "SyncroBrain Meta-Repo tooling",
+  "scripts": {
+    "init:repos": "node tooling/scripts/init-repos.mjs",
+    "init:repos:required": "node tooling/scripts/init-repos.mjs --required-only",
+    "dev:up": "node tooling/scripts/dev-up.mjs",
+    "dev:mvp": "node tooling/scripts/dev-mvp.mjs",
+    "check": "biome check ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

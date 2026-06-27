@@ -1,21 +1,65 @@
-# LuminaryIoTChain 新人上手
+# SyncroBrain 新人上手
 
 > 生态通用步骤：[LuminaryWorks/docs — 新人上手](https://github.com/LuminaryWorks/docs/blob/main/docs/develop/onboarding.md)  
-> 仓库拆解计划：[plan/repository-split.md](./plan/repository-split.md)
+> 仓库拆解：[plan/repository-split.md](./plan/repository-split.md)
 
-## 仓库模型（过渡期）
+## MetaRepo vs 子仓
 
-当前业务代码在 MetaRepo `services/` 下；规划拆为独立私有仓（与 BlockyEdu 对齐）。**对外文档**将迁至公开仓 `LuminaryIoTChain/docs`。
+| 模块 | 目录 | 说明 |
+|------|------|------|
+| 编排 | 本仓 `platform` | `init.sh` 拉子项目；**不用** submodule / subtree |
+| 后端 | `iot-gateway/` | NestJS |
+| 前端 | `iot-console-web/` | Web 控制台 |
+| 官网 | `website/` | Next.js → Cloudflare Pages |
+| 文档 | `docs/` | 对外文档（公开仓） |
+| 部署 | `deploy/` | Docker Compose |
 
-| 目录 / 仓 | 说明 |
-|-----------|------|
-| `spec/` | 工程规格（私有 MetaRepo） |
-| `services/iot-gateway` | NestJS 后端（规划 → `iot-gateway` 仓） |
-| `services/iot-console-web` | Web 控制台（规划 → `iot-console-web` 仓） |
-| `deploy/` | Docker compose（PG、Mosquitto/EMQX） |
-| `docs/` | 对外说明（规划 → 公开 `docs` 仓） |
+子仓清单：`.meta/manifest.json`
 
-## 快速开始
+## 一键开发环境
+
+clone MetaRepo 后**一条命令**完成：拉子仓 → 复制 `.env` → Docker → `pnpm install` → 数据库迁移。
+
+```powershell
+git clone git@github.com:syncrobrain/platform.git syncrobrain
+cd syncrobrain
+
+# 一键 bootstrap（需 Node、pnpm、Docker）
+.\dev.ps1
+
+# 启动 gateway + console（两个独立窗口）
+.\dev-mvp.ps1
+```
+
+Linux / macOS：`chmod +x dev.sh dev-mvp.sh && ./dev.sh && ./dev-mvp.sh`
+
+| 脚本 | 作用 |
+|------|------|
+| `init.sh` / `init.ps1` | 仅 clone 子仓 |
+| **`dev.sh` / `dev.ps1`** | clone + env + docker + install + migrate |
+| `dev-mvp.ps1` | 启动 gateway (:13100) + console (:5180) |
+
+可选参数：`.\dev.ps1 -SkipDocker` · `.\dev.ps1 -RequiredOnly`（只拉必选子仓）
+
+**前置**：`iot-gateway` 安装 `@luminaryworks/auth-core` 需设置 `NODE_AUTH_TOKEN`（GitHub Packages），或在 `.npmrc` 指向本地 `LuminaryWorks/shared`。
+
+## 初始化（仅 clone）
+
+若只需拉子仓、不装包：
+
+```bash
+chmod +x init.sh && ./init.sh
+```
+
+Windows：`.\init.ps1 -Only iot-gateway,iot-console-web`
+
+## 用 IDE 查看全部代码
+
+**File → Open Workspace from File → `syncrobrain.code-workspace`**
+
+多根工作区可同时浏览 MetaRepo 与各子仓，各自独立 Git 提交。
+
+## 快速开始（全栈 dev）
 
 ### 1. 生态依赖
 
@@ -30,54 +74,44 @@ pnpm install && pnpm build
 ### 2. 基础设施
 
 ```powershell
-cd D:\www\LuminaryIoTChain\deploy
+cd D:\www\syncrobrain\deploy
 docker compose -f docker-compose.dev.yml up -d
-# PostgreSQL :5434 · Mosquitto :1883
 ```
 
-### 3. iot-gateway（后端）
+### 3. iot-gateway
 
 ```powershell
-cd D:\www\LuminaryIoTChain\services\iot-gateway
-copy .npmrc.example .npmrc   # 配置 NODE_AUTH_TOKEN 或 file: 到 shared
+cd D:\www\syncrobrain\services\iot-gateway
+copy .npmrc.example .npmrc
 copy .env.example .env
-pnpm install --no-frozen-lockfile
-pnpm dev
+pnpm install --no-frozen-lockfile && pnpm dev
 # http://localhost:13100
 ```
 
-`.env` 关键项：`IDP_ISSUER` · `DB_HOST`/`DB_PORT`（PostgreSQL :5434）· `pnpm migration:run` 建表
-
-### 4. iot-console-web（前端）
+### 4. iot-console-web
 
 ```powershell
-cd D:\www\LuminaryIoTChain\services\iot-console-web
+cd D:\www\syncrobrain\services\iot-console-web
 copy .env.development.example .env.development
 pnpm install && pnpm dev
 # http://localhost:5180
 ```
 
-Logto 注册 Redirect：`http://localhost:5180/auth/callback`
+Logto Redirect：`http://localhost:5180/auth/callback`
 
-## 在 MetaRepo vs 子目录开发
+## 按角色单独开发
 
 | 场景 | 做法 |
 |------|------|
-| 改规格 / 里程碑 | MetaRepo `spec/` `plan/` |
-| 只改 gateway | `services/iot-gateway`（未来独立 clone） |
-| 只改控制台 | `services/iot-console-web` |
-| 写对外教程 | `docs/` → 将来 `LuminaryIoTChain/docs` 公开仓 |
+| 改规格 / 里程碑 | 在 MetaRepo 根目录提交 `spec/` `plan/` |
+| 只改后端 | `cd iot-gateway` → commit → push 到 `syncrobrain/iot-gateway` |
+| 只改控制台 | `cd iot-console-web` → push 到 `iot-console-web` |
+| 只改官网 | `cd website` → push 到 `website` |
+| 写对外文档 | `cd docs` → push 到 `docs`（公开） |
 
-拆解完成后运行 `./init.ps1` 拉取各子仓到固定路径。
+**提交原则**：业务代码在子目录内 commit / push，MetaRepo 只提交 spec、plan、contracts、tooling。
 
-## 数据存储
+## 数据存储与登录
 
-- **OLTP**：PostgreSQL（`iot-gateway`）— 与 DataLuminary / Logto 同栈，见 [为何 PostgreSQL](https://github.com/LuminaryWorks/docs/blob/main/docs/develop/datastore.md)
-- **时序**：ClickHouse（IoT-M5 规划）
-
-## 统一登录
-
-后端：`@luminaryworks/auth-core` + 全局 `LuminaryJwtAuthGuard`  
-前端：`services/iot-console-web/src/lib/idp.ts`（PKCE）
-
-路线图：[identity-roadmap](https://github.com/LuminaryWorks/docs/blob/main/docs/develop/identity-roadmap.md)
+- OLTP：PostgreSQL `:5434` — [datastore](https://github.com/LuminaryWorks/docs/blob/main/docs/develop/datastore.md)
+- 统一登录：`@luminaryworks/auth-core` — [identity-roadmap](https://github.com/LuminaryWorks/docs/blob/main/docs/develop/identity-roadmap.md)
