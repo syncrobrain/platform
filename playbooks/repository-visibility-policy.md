@@ -1,4 +1,4 @@
-# LuminaryIoTChain 仓库可见性策略
+# SyncroBrain 仓库可见性策略
 
 > 对齐 [BlockyEdu 可见性策略](https://github.com/BlockyEdu/VibeEdu/blob/master/playbooks/repository-visibility-policy.md)
 

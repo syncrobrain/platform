@@ -7,7 +7,7 @@
 
 | 仓库 | 本地路径 | 可见性 |
 |------|----------|--------|
-| `platform`（MetaRepo，现 `LuminaryIoTChain`） | `.` | Private |
+| `platform` | `.`（MetaRepo） | Private |
 | `iot-gateway` | `iot-gateway/` | Private |
 | `iot-console-web` | `iot-console-web/` | Private |
 | `website` | `website/` | Private |
@@ -25,7 +25,7 @@
 ## 新人流程
 
 ```bash
-git clone git@github.com:syncrobrain/LuminaryIoTChain.git syncrobrain
+git clone git@github.com:syncrobrain/platform.git syncrobrain
 cd syncrobrain
 ./dev.sh
 ./dev-mvp.sh

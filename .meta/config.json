@@ -8,8 +8,9 @@
   "metaRepo": {
     "name": "platform",
     "description": "SyncroBrain Meta-Repo — spec、plan、contracts、子仓编排",
-    "remote": "git@github.com:syncrobrain/LuminaryIoTChain.git",
-    "remoteHttps": "https://github.com/syncrobrain/LuminaryIoTChain.git"
+    "remote": "git@github.com:syncrobrain/platform.git",
+    "remoteHttps": "https://github.com/syncrobrain/platform.git",
+    "legacyRemote": "git@github.com:syncrobrain/LuminaryIoTChain.git"
   },
   "notes": [
     "Do not use git submodule or git subtree for child repos.",

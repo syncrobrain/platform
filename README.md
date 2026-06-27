@@ -36,7 +36,7 @@
 ## 仓库结构（MetaRepo + 多仓）
 
 ```text
-syncrobrain/LuminaryIoTChain/  # MetaRepo（私有）
+syncrobrain/platform/              # MetaRepo（私有）
 ├── .meta/                       # manifest.json — 子仓 SSOT
 ├── syncrobrain.code-workspace   # VS Code / Cursor 多根工作区
 ├── spec/ plan/ contracts/ playbooks/
@@ -49,7 +49,7 @@ syncrobrain/LuminaryIoTChain/  # MetaRepo（私有）
 ```
 
 ```powershell
-git clone git@github.com:syncrobrain/LuminaryIoTChain.git syncrobrain
+git clone git@github.com:syncrobrain/platform.git syncrobrain
 cd syncrobrain
 .\dev.ps1
 ```

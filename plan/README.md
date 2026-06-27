@@ -1,4 +1,4 @@
-# LuminaryIoTChain 工程规划
+# SyncroBrain 工程规划
 
 ## 仓库拆解
 
