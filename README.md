@@ -77,13 +77,14 @@ Logto 统一登录需另启 [LuminaryWorks/identity](https://github.com/Luminary
 
 ## LuminaryWorks 生态
 
-| 项目 | 在 IoT 场景的角色 |
-|------|------------------|
-| [DataLuminary](https://github.com/dataluminary/platform) | DataTalk 图表 / AI 数据洞察 |
-| [BlockyEdu](https://github.com/blockyedu/platform) | 工程师接入实验与 AI 辅导 |
-| [DoerFlow](https://github.com/doerflow/platform) | AI 服务与链上任务网络 |
-| [VistaRemote](https://github.com/VistaRemote/vibeCode) | 设备远程桌面运维 |
-| [VistaCast](https://github.com/VistaCast/vistacast) | 摄像头 AI 告警（规划） |
+| 项目 | 官网 | 在 IoT 场景的角色 |
+|------|------|------------------|
+| [LuminaryWorks](https://luminaryworks.dev) | [luminaryworks.dev](https://luminaryworks.dev) | 生态编排、统一身份 |
+| [DataLuminary](https://dataluminary.dev) | [dataluminary.dev](https://dataluminary.dev) | DataTalk 图表 / AI 数据洞察 |
+| [BlockyEdu](https://blockyedu.com) | [blockyedu.com](https://blockyedu.com) | 工程师接入实验与 AI 辅导 |
+| [DoerFlow](https://doerflow.dev) | [doerflow.dev](https://doerflow.dev) | AI 服务与链上任务网络 |
+| [VistaRemote](https://remote.vistacast.dev) | [remote.vistacast.dev](https://remote.vistacast.dev) | 设备远程桌面运维 |
+| [VistaCast](https://vistacast.dev) | [vistacast.dev](https://vistacast.dev) | 摄像头 AI 告警（规划） |
 
 ## 文档
 
@@ -94,3 +95,7 @@ Logto 统一登录需另启 [LuminaryWorks/identity](https://github.com/Luminary
 | [spec/ecosystem.md](./spec/ecosystem.md) | 工程规格 — LuminaryWorks 角色 |
 | [syncrobrain/docs](https://github.com/syncrobrain/docs) | **对外** — RsPress 文档站（公开仓） |
 | [plan/README.md](./plan/README.md) | 里程碑 |
+
+## License
+
+[Polyform Noncommercial License 1.0.0](LICENSE) (Polyform-NC). Non-commercial use permitted. Commercial use requires a separate license from SyncroBrain.

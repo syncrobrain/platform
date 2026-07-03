@@ -1,6 +1,7 @@
 {
   "name": "syncrobrain-meta",
   "private": true,
+  "license": "Polyform-Noncommercial-1.0.0",
   "description": "SyncroBrain Meta-Repo tooling",
   "scripts": {
     "init:repos": "node tooling/scripts/init-repos.mjs",
